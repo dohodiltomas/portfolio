@@ -1,0 +1,288 @@
+:root{
+  --bg: #05070a;
+  --accent: #9ef01a;
+}
+
+*{ box-sizing: border-box; }
+
+body{ background: var(--bg); }
+.bg-true-dark{ background: var(--bg); }
+.text-accent{ color: var(--accent) !important; }
+.letter{ letter-spacing: .22em; }
+
+/* NAV */
+.nav-glass{
+  background: rgba(0,0,0,.45) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.brand-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 20px rgba(158,240,26,.35);
+}
+
+/* HERO */
+.hero{
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 650px at 20% 10%, rgba(158,240,26,.10), transparent 60%),
+    radial-gradient(900px 500px at 85% 50%, rgba(255,255,255,.06), transparent 65%),
+    linear-gradient(to bottom, #0b0f14, var(--bg));
+  filter: saturate(1.05);
+}
+
+/* Pills */
+.pill{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+/* ===== FOŤÁK: absolutně bez boxu/rámečku ===== */
+.camera-free{
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: grid;
+  place-items: center;
+
+  /* žádné pozadí, žádný border, žádný radius */
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+/* jen měkké světlo BEZ hran (proto je to kruhové a rozmazané) */
+.camera-free::before{
+  content:"";
+  position:absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 999px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(circle at 40% 35%, rgba(255,255,255,.12), transparent 55%),
+    radial-gradient(circle at 60% 60%, rgba(158,240,26,.14), transparent 60%);
+  filter: blur(20px);
+  opacity: .95;
+  pointer-events:none;
+}
+
+/* samotný obrázek */
+.camera-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translateY(10px);
+  filter: drop-shadow(0 28px 60px rgba(0,0,0,.70));
+  user-select: none;
+}
+
+/* SHOWCASE layout bez boxů */
+.showcase-group{ padding: 6px 2px; }
+.showcase-head{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.showcase-title{
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+.showcase-controls{ display: flex; gap: 8px; }
+.showcase-meta{ margin-top: 10px; opacity: .85; }
+
+/* Buttons on dark */
+.btn-outline-light{ border-color: rgba(255,255,255,.35); }
+.btn-outline-light:hover{ border-color: rgba(255,255,255,.55); }
+
+/* ===== KARETNÍ BALÍČEK ===== */
+.deck{
+  position: relative;
+  height: 380px;
+  border-radius: 18px;
+  overflow: visible;
+  background: transparent;
+}
+
+/* prosvětlení za kartami (bez hran díky blur) */
+.deck::before{
+  content:"";
+  position:absolute;
+  inset:-26px;
+  border-radius: 30px;
+  background:
+    radial-gradient(520px 280px at 35% 35%, rgba(255,255,255,.14), transparent 62%),
+    radial-gradient(560px 320px at 70% 70%, rgba(158,240,26,.12), transparent 62%),
+    radial-gradient(760px 360px at 50% 55%, rgba(255,255,255,.06), transparent 70%);
+  filter: blur(14px);
+  opacity: 1;
+  pointer-events:none;
+  z-index: 0;
+}
+
+/* karta = fotka + stín, bez rámečku */
+.deck-card{
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1;
+
+  box-shadow:
+    0 18px 50px rgba(0,0,0,.62),
+    0 2px 0 rgba(255,255,255,.05) inset;
+
+  transition: transform .28s ease, opacity .28s ease, filter .28s ease;
+}
+
+.deck-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.32));
+}
+
+.deck-card.is-top{
+  filter: saturate(1.08) contrast(1.05);
+}
+.deck-card.is-top:hover{
+  transform: translateY(-4px) rotate(0.2deg) scale(1.01);
+}
+
+/* ABOUT bez rámečku/glow */
+.about-photo{
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,.55);
+}
+.about-img{
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  display: block;
+  background: rgba(0,0,0,.16);
+  user-select: none;
+}
+
+/* Lightbox modal */
+.modal-glass{
+  background: rgba(12,16,22,.92);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(14px);
+}
+
+/* click helper */
+.img-click{
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+.img-click:focus{ outline: none; }
+
+/* Responsive */
+@media (max-width: 992px){
+  .camera-free{ height: 340px; }
+  .deck{ height: 340px; }
+  .about-img{ height: 360px; }
+  .camera-free::before{ width: 440px; height: 440px; }
+}
+
+@media (max-width: 576px){
+  .camera-free{ height: 280px; }
+  .deck{ height: 300px; }
+  .about-img{ height: 300px; }
+  .camera-free::before{ width: 360px; height: 360px; }
+}
+
+/* ===== CLEAN CONTACT SECTION ===== */
+.contact-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.contact-card{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: rgba(255,255,255,.9);
+
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(8px);
+
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.contact-card:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.18);
+  color: white;
+}
+
+.contact-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(158,240,26,.12);
+  color: var(--accent);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.contact-label{
+  font-size: .9rem;
+  opacity: .75;
+}
+
+.contact-value{
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+}

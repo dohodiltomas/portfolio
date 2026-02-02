@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TD • Photo — Showcase</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-true-dark text-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top nav-glass">
+    <div class="container">
+      <a class="navbar-brand fw-semibold d-flex align-items-center gap-2" href="#">
+        <span class="brand-dot"></span> TD • Photo
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-lg-2 align-items-lg-center">
+  <li class="nav-item"><a class="nav-link" href="#showcase">Ukázky</a></li>
+  <li class="nav-item"><a class="nav-link" href="#about">O mně</a></li>
+  <li class="nav-item">
+    <a class="btn btn-sm btn-outline-light ms-lg-2" href="#contact">
+      Kontakt
+    </a>
+  </li>
+</ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="container position-relative py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p class="text-uppercase letter text-secondary mb-2">TD showcase</p>
+          <h1 class="display-5 fw-bold lh-1 mb-3">
+            Portréty • Sport • Auta
+            
+          </h1>
+          <h1 class="display-5 fw-bold lh-1 mb-3">
+          <span class="text-accent">Tomáš Dohodil</span>
+          </h1>
+          <p class="lead text-secondary mb-4">
+            Zachycuji chvíle, které stojí za to si pamatovat.
+          </p>
+
+          <div class="d-flex gap-2 flex-wrap">
+  <a class="btn btn-light btn-lg" href="#showcase">
+    Ukázky <i class="bi bi-arrow-right"></i>
+  </a>
+  <a class="btn btn-outline-light btn-lg" href="#about">
+    O mně
+  </a>
+  <a class="btn btn-outline-light btn-lg" href="#contact">
+    Kontakt
+  </a>
+</div>
+
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <span class="pill"><i class="bi bi-stars"></i> Canon EOS R10</span>
+            <span class="pill"><i class="bi bi-aspect-ratio"></i> Edit</span>
+            <span class="pill"><i class="bi bi-layers"></i> Jižní Morava</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <!-- FOŤÁK: žádný text, žádný badge, žádný box -->
+          <div class="camera-free">
+            <img
+              class="camera-img"
+              src="https://media.discordapp.net/attachments/1266401399130951682/1467896829831155825/product_5494595-removebg-preview.png?ex=69820cf4&is=6980bb74&hm=60c99c3c15444f745e59dbde8e6981500d7ad0b255c2064608a6a7910c1efd04&=&format=webp&quality=lossless"
+              alt="Fotoaparát"
+              loading="lazy"
+              draggable="false"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="showcase" class="py-5">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
+        <div>
+          <h2 class="fw-bold mb-1">Album</h2>
+          <p class="text-secondary mb-0">
+            
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- PORTRÉTY -->
+        <div class="col-lg-4">
+          <div class="showcase-group">
+            <div class="showcase-head">
+              <h3 class="showcase-title">Portréty</h3>
+              <div class="showcase-controls">
+                <button class="btn btn-sm btn-outline-light deck-prev" data-deck="portraits" type="button">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-light deck-next" data-deck="portraits" type="button">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="deck" data-deck="portraits">
+              <button class="deck-card img-click" type="button"
+                data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-478.jpg?ver=0"
+                data-title="Portréty">
+                <img class="deck-img" loading="lazy"
+                  src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-478.jpg?ver=0"
+                  alt="Portrét 1" draggable="false">
+              </button>
+
+              <button class="deck-card img-click" type="button"
+                data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/IMG_3509-2.jpg?ver=0"
+                data-title="Portréty">
+                <img class="deck-img" loading="lazy"
+                  src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/IMG_3509-2.jpg?ver=0"
+                  alt="Portrét 2" draggable="false">
+              </button>
+
+              <button class="deck-card img-click" type="button"
+                data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/IMG_4244.jpg?ver=0"
+                data-title="Portréty">
+                <img class="deck-img" loading="lazy"
+                  src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/IMG_4244.jpg?ver=0"
+                  alt="Portrét 3" draggable="false">
+              </button>
+            </div>
+
+            <div class="showcase-meta text-secondary small">3 ukázky</div>
+          </div>
+        </div>
+
+        <!-- SPORT -->
+        <div class="col-lg-4">
+          <div class="showcase-group">
+            <div class="showcase-head">
+              <h3 class="showcase-title">Sport</h3>
+              <div class="showcase-controls">
+                <button class="btn btn-sm btn-outline-light deck-prev" data-deck="sport" type="button">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-light deck-next" data-deck="sport" type="button">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="deck" data-deck="sport">
+              <button class="deck-card img-click" type="button"
+                data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-185.jpg?ver=0"
+                data-title="Sport">
+                <img class="deck-img" loading="lazy"
+                  src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-185.jpg?ver=0"
+                  alt="Sport 1" draggable="false">
+              </button>
+
+              <button class="deck-card img-click" type="button"
+                data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/IMG_3076-2.jpg?ver=0"
+                data-title="Sport">
+                <img class="deck-img" loading="lazy"
+                  src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/IMG_3076-2.jpg?ver=0"
+                  alt="Sport 2" draggable="false">
+              </button>
+
+              <button class="deck-card img-click" type="button"
+                data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-481.jpg?ver=0"
+                data-title="Sport">
+                <img class="deck-img" loading="lazy"
+                  src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-481.jpg?ver=0"
+                  alt="Sport 3" draggable="false">
+              </button>
+
+              <button class="deck-card img-click" type="button"
+                data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-483.jpg?ver=0"
+                data-title="Sport">
+                <img class="deck-img" loading="lazy"
+                  src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-483.jpg?ver=0"
+                  alt="Sport 4" draggable="false">
+              </button>
+            </div>
+
+            <div class="showcase-meta text-secondary small">4 ukázky</div>
+          </div>
+        </div>
+
+        <!-- AUTA -->
+        <div class="col-lg-4">
+          <div class="showcase-group">
+            <div class="showcase-head">
+              <h3 class="showcase-title">Auta</h3>
+              <div class="showcase-controls">
+                <button class="btn btn-sm btn-outline-light deck-prev" data-deck="cars" type="button">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-light deck-next" data-deck="cars" type="button">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="deck" data-deck="cars">
+              <button class="deck-card img-click" type="button"
+                data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/IMG_0850-2.jpg?ver=0"
+                data-title="Auta">
+                <img class="deck-img" loading="lazy"
+                  src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/IMG_0850-2.jpg?ver=0"
+                  alt="Auto 1" draggable="false">
+              </button>
+            </div>
+
+            <div class="showcase-meta text-secondary small">1 ukázka</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5 border-top border-secondary border-opacity-25">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+          <!-- O mně bez rámů a bez zeleného glow -->
+          <button class="about-photo img-click" type="button"
+            data-full="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-484.jpg?ver=0"
+            data-title="O mně">
+            <img class="about-img" loading="lazy"
+              src="https://img43.rajce.idnes.cz/d4302/19/19864/19864657_681ea3faf3f983f24a2ae4b5e2a65928/images/FHH-484.jpg?ver=0"
+              alt="O mně" draggable="false">
+          </button>
+        </div>
+
+        <div class="col-lg-7">
+          <h2 class="fw-bold mb-2">O mně</h2>
+          <p class="text-secondary mb-3">
+Vyrůstal jsem na jižní Moravě a právě tady jsem si našel cestu k fotografii. Nejraději fotím portréty, sport a auta — tedy věci, kde hraje roli světlo, pohyb a moment. Rád za vámi přijedu a společně vymyslíme focení, které bude dávat smysl a bude vás bavit.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <span class="pill"><i class="bi bi-person"></i> Portréty</span>
+            <span class="pill"><i class="bi bi-trophy"></i> Sport</span>
+            <span class="pill"><i class="bi bi-car-front"></i> Auta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 border-top border-secondary border-opacity-25">
+    <div class="container d-flex flex-wrap gap-2 align-items-center justify-content-between">
+      <div class="text-secondary small">© <span id="year"></span> TD • Photo</div>
+      <div class="text-secondary small">Tomáš Dohodil</div>
+    </div>
+  </footer>
+  
+  <!-- CONTACT (čistá verze bez formuláře) -->
+<section id="contact" class="py-5 border-top border-secondary border-opacity-25">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <div class="text-center mb-4">
+          <h2 class="fw-bold mb-2">Kontakt</h2>
+          <p class="text-secondary mb-0">
+            Pokud máš zájem o focení nebo spolupráci, klidně se ozvi.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <a href="mailto:dohodil.tomas@gmail.com" class="contact-card">
+            <div class="contact-icon">
+              <i class="bi bi-envelope"></i>
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">dohodil.tomas@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/dohodil.tomas" target="_blank" class="contact-card">
+            <div class="contact-icon">
+              <i class="bi bi-instagram"></i>
+            </div>
+            <div>
+              <div class="contact-label">Instagram</div>
+              <div class="contact-value">@dohodil.tomas</div>
+            </div>
+          </a>
+
+          <a href="tel:+420730699111" class="contact-card">
+            <div class="contact-icon">
+              <i class="bi bi-telephone"></i>
+            </div>
+            <div>
+              <div class="contact-label">Telefon</div>
+              <div class="contact-value">+420 730 699 111</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- LIGHTBOX -->
+  <div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content modal-glass rounded-4 overflow-hidden">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="lightboxTitle">Foto</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <img id="lightboxImg" src="" alt="" class="w-100 rounded-3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
