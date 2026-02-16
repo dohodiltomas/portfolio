@@ -55,7 +55,10 @@ function initDecks(){
   document.querySelectorAll(".deck").forEach(deck => {
     layoutDeck(deck, 0);
 
-    deck.addEventListener("click", () => {
+    deck.addEventListener("click", (e) => {
+      // když klikneš na šipky (nebo jejich děti), neotvírej lightbox
+      if (e.target.closest(".deck-next") || e.target.closest(".deck-prev")) return;
+
       const top = deck.querySelector(".deck-card.is-top");
       if (!top) return;
       openLightbox(top.getAttribute("data-full"), top.getAttribute("data-title"));
@@ -63,24 +66,34 @@ function initDecks(){
   });
 
   document.querySelectorAll(".deck-next").forEach(btn => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // důležité: ať se to nepřeklikne do deck clicku
+
       const name = btn.dataset.deck;
       const deck = document.querySelector(`.deck[data-deck="${name}"]`);
       if (!deck) return;
 
       const n = deck.querySelectorAll(".deck-card").length;
+      if (n <= 1) return; // není co listovat
+
       const i = parseInt(deck.dataset.index || "0", 10);
       layoutDeck(deck, (i + 1) % n);
     });
   });
 
   document.querySelectorAll(".deck-prev").forEach(btn => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
       const name = btn.dataset.deck;
       const deck = document.querySelector(`.deck[data-deck="${name}"]`);
       if (!deck) return;
 
       const n = deck.querySelectorAll(".deck-card").length;
+      if (n <= 1) return;
+
       const i = parseInt(deck.dataset.index || "0", 10);
       layoutDeck(deck, (i - 1 + n) % n);
     });
@@ -96,3 +109,4 @@ function initDecks(){
 }
 
 initDecks();
+
