@@ -420,3 +420,41 @@ body{ background: var(--bg); }
   background-size: 3px 3px;
   opacity: .06;
 }
+
+/* ===== Lightbox metadata panel (glass) ===== */
+.lb-meta{
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: min(360px, calc(100% - 28px));
+  padding: 14px 14px 12px;
+  border-radius: 18px;
+  z-index: 6;
+
+  background: rgba(18, 22, 28, .55);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 20px 60px rgba(0,0,0,.55);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+}
+
+.lb-meta-title{
+  font-weight: 800;
+  letter-spacing: .01em;
+  margin-bottom: 10px;
+}
+
+.lb-meta-body{
+  display: grid;
+  gap: 8px;
+}
+
+.lb-meta-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: .92rem;
+}
+
+.lb-meta-key{ opacity: .75; }
+.lb-meta-val{ font-weight: 600; text-align: right; }
