@@ -298,3 +298,125 @@ body{ background: var(--bg); }
   }
 }
 
+/* ===== Lightbox gallery navigation (profi) ===== */
+.lb-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.92);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 5;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.lb-prev{ left: 14px; }
+.lb-next{ right: 14px; }
+
+/* zobrazení jen na desktop */
+@media (min-width: 992px){
+  .modal-body:hover .lb-nav{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lb-nav:hover{
+    background: rgba(0,0,0,.55);
+    border-color: rgba(255,255,255,.35);
+    transform: translateY(-50%) scale(1.04);
+  }
+
+  /* kdyby uživatel taboval: */
+  .lb-nav:focus-visible{
+    opacity: 1;
+    pointer-events: auto;
+    outline: 2px solid rgba(158,240,26,.65);
+    outline-offset: 3px;
+  }
+}
+
+/* disabled state */
+.lb-nav:disabled{
+  opacity: .25 !important;
+  pointer-events: none !important;
+}
+/* ===== Lightbox image: vždy se vejde do obrazovky ===== */
+#lightbox .modal-body{
+  padding: 0 1rem 1rem; /* trochu prostoru dole */
+}
+
+#lightboxImg{
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 140px); /* odečte hlavičku + okraje */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== iOS glass lightbox ===== */
+
+/* tmavší backdrop (pozadí za modalem) */
+.modal-backdrop.show{
+  opacity: .78; /* default je často moc slabé nebo divné */
+}
+
+/* samotná "karta" modalu */
+#lightbox .modal-content{
+  background: rgba(18, 22, 28, .55) !important;  /* glass tint */
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 22px;
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.65),
+    0 1px 0 rgba(255,255,255,.10) inset;
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  overflow: hidden;
+}
+
+/* zruš bílý podklad v header/body */
+#lightbox .modal-header,
+#lightbox .modal-body{
+  background: transparent !important;
+}
+
+/* jemný oddělovač hlavičky */
+#lightbox .modal-header{
+  border-bottom: 1px solid rgba(255,255,255,.08) !important;
+}
+
+/* title víc iOS-like */
+#lightbox .modal-title{
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+/* ať fotka sedí v okně (navazuje na minulý fix) */
+#lightboxImg{
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* volitelné: jemná zrnitost jako iOS */
+#lightbox .modal-content::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: .06;
+}
