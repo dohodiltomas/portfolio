@@ -277,7 +277,7 @@
         <div class="col-lg-7">
           <h2 class="fw-bold mb-2">O mně</h2>
           <p class="text-secondary mb-3">
-Vyrůstal jsem na jižní Moravě a právě tady jsem si našel cestu k fotografii. Nejraději fotím portréty, sport a auta — tedy věci, kde hraje roli světlo, pohyb a moment. Rád za vámi přijedu a společně vymyslíme focení, které bude dávat smysl a bude vás bavit.
+Vyrůstal jsem na jižní Moravě a právě tady jsem si našel cestu k fotografii. Nejraději fotím portréty, sport a akce — tedy věci, kde hraje roli světlo, pohyb a moment. Rád za vámi přijedu a společně vymyslíme focení, které bude dávat smysl a bude vás bavit.
           </p>
 
           <div class="d-flex flex-wrap gap-2">
@@ -355,13 +355,34 @@ Vyrůstal jsem na jižní Moravě a právě tady jsem si našel cestu k fotograf
   <div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content modal-glass rounded-4 overflow-hidden">
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="lightboxTitle">Foto</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Zavřít"></button>
-        </div>
-        <div class="modal-body pt-0">
-          <img id="lightboxImg" src="" alt="" class="w-100 rounded-3">
-        </div>
+       <div class="modal-header border-0 align-items-center">
+  <h5 class="modal-title" id="lightboxTitle">Foto</h5>
+
+  <div class="d-flex gap-2 ms-auto">
+    <button type="button" class="btn btn-sm btn-outline-light" id="lbPrev" aria-label="Předchozí">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button type="button" class="btn btn-sm btn-outline-light" id="lbNext" aria-label="Další">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+    <button type="button" class="btn-close btn-close-white ms-2" data-bs-dismiss="modal" aria-label="Zavřít"></button>
+  </div>
+</div>
+
+        <div class="modal-body pt-0 position-relative">
+
+  <!-- overlay nav (desktop) -->
+  <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Předchozí">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+
+  <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Další">
+    <i class="bi bi-chevron-right"></i>
+  </button>
+
+  <img id="lightboxImg" src="" alt="" class="rounded-3">
+</div>
+
       </div>
     </div>
   </div>
@@ -370,7 +391,6 @@ Vyrůstal jsem na jižní Moravě a právě tady jsem si našel cestu k fotograf
   <script src="script.js"></script>
 </body>
 </html>
-
 
 
 
