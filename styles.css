@@ -117,6 +117,17 @@ body{ background: var(--bg); }
 .btn-outline-light{ border-color: rgba(255,255,255,.35); }
 .btn-outline-light:hover{ border-color: rgba(255,255,255,.55); }
 
+/* Zonerama button */
+.showcase-more .btn{
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.showcase-more .btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+
 /* ===== KARETNÍ BALÍČEK ===== */
 .deck{
   position: relative;
@@ -286,3 +297,4 @@ body{ background: var(--bg); }
     grid-template-columns: 1fr;
   }
 }
+
